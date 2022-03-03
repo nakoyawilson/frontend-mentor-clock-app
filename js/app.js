@@ -14,9 +14,27 @@ let userIpAddress;
 let unixtime;
 
 const getQuote = async () => {
-  const response = await axios.get("https://api.quotable.io/random/");
-  quote.innerHTML = response.data.content;
-  author.innerHTML = response.data.author;
+  try {
+    const response = await axios.get(
+      "https://programming-quotes-api.herokuapp.com/Quotes/random"
+    );
+    quote.innerHTML = response.data.en;
+    author.innerHTML = response.data.author;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const getStartingQuote = async () => {
+  try {
+    const response = await axios.get(
+      "https://programming-quotes-api.herokuapp.com/Quotes/5a96001a7700780004d51dce"
+    );
+    quote.innerHTML = response.data.en;
+    author.innerHTML = response.data.author;
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 const getCurrentTime = async () => {
@@ -68,7 +86,7 @@ const displayTime = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  getQuote();
+  getStartingQuote();
   getIpAddress();
   setInterval(displayTime, 1000);
 });
