@@ -22,7 +22,7 @@ const getQuote = async () => {
 const getCurrentTime = async () => {
   try {
     const response = await axios.get(
-      `http://worldtimeapi.org/api/ip/${userIpAddress}`
+      `https://worldtimeapi.org/api/ip/${userIpAddress}`
     );
     abbreviation.innerHTML = response.data.abbreviation;
     currentTimezone.innerHTML = response.data.timezone;
