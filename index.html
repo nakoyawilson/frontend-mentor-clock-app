@@ -12,21 +12,57 @@
       sizes="32x32"
       href="./assets/favicon-32x32.png"
     />
-  </head>
-  <body>
-    <p id="quote"></p>
-    <span id="author"></span>
-    <button id="newQuoteButton">Get New Quote</button>
-    <h1>
-      <span id="greeting"></span>, it's currently <span id="userTime"></span>
-      <span id="abbreviation"></span> in <span id="userLocation"></span>
-    </h1>
-    <button>More Less</button>
-    <p>Current timezone <span id="currentTimezone"></span></p>
-    <p>Day of the year <span id="dayOfTheYear"></span></p>
-    <p>Day of the week <span id="dayOfTheWeek"></span></p>
-    <p>Week number <span id="weekNumber"></span></p>
 
-    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="daytime">
+    <main class="main">
+      <div class="quote-wrapper">
+        <div>
+          <p id="quote" class="quote-content quote-text">
+            The science of operations, as derived from mathematics more
+            especially, is a science of itself, and has its own abstract truth
+            and value.
+          </p>
+          <span id="author" class="quote-content quote-author"
+            >Ada Lovelace</span
+          >
+        </div>
+        <button id="newQuoteButton" class="refresh">
+          <img src="assets/desktop/icon-refresh.svg" alt="" />
+        </button>
+      </div>
+      <div class="time-wrapper">
+        <h1>
+          <span class="greeting"
+            ><img
+              src="assets/desktop/icon-sun.svg"
+              alt=""
+              class="time-icon"
+            /><span id="greeting" class="greeting-text">Good morning</span
+            ><span class="extra-text">, it's currently</span></span
+          >
+          <span id="userTime" class="time">11:37</span>
+          <span id="abbreviation" class="abbreviation">BST</span>
+          <span class="location"
+            >in <span id="userLocation">London, UK</span></span
+          >
+        </h1>
+        <button class="expand-content">
+          <span id="expand" class="expand-text">More</span>
+          <span class="expand-icon-wrapper"
+            ><img src="assets/desktop/icon-arrow-down.svg" alt
+          /></span>
+        </button>
+      </div>
+    </main>
+    <div class="more">
+      <p>Current timezone <span id="currentTimezone">Europe/London</span></p>
+      <p>Day of the year <span id="dayOfTheYear">295</span></p>
+      <p>Day of the week <span id="dayOfTheWeek">5</span></p>
+      <p>Week number <span id="weekNumber">42</span></p>
+    </div>
+
+    <!-- <script src="js/app.js"></script> -->
   </body>
 </html>
