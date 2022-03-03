@@ -1,7 +1,9 @@
+const appBody = document.querySelector("body");
 const quote = document.getElementById("quote");
 const author = document.getElementById("author");
 const newQuoteButton = document.getElementById("newQuoteButton");
 const greeting = document.getElementById("greeting");
+const timeIcon = document.getElementById("timeIcon");
 const userTime = document.getElementById("userTime");
 const abbreviation = document.getElementById("abbreviation");
 const userLocation = document.getElementById("userLocation");
@@ -11,25 +13,13 @@ const dayOfTheWeek = document.getElementById("dayOfTheWeek");
 const weekNumber = document.getElementById("weekNumber");
 const apikey = "";
 let userIpAddress;
+let startingHour;
 let unixtime;
 
 const getQuote = async () => {
   try {
     const response = await fetch(
       "https://programming-quotes-api.herokuapp.com/Quotes/random"
-    );
-    const data = await response.json();
-    quote.innerHTML = data.en;
-    author.innerHTML = data.author;
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-const getStartingQuote = async () => {
-  try {
-    const response = await fetch(
-      "https://programming-quotes-api.herokuapp.com/Quotes/5a96001a7700780004d51dce"
     );
     const data = await response.json();
     quote.innerHTML = data.en;
@@ -73,12 +63,16 @@ const getIpAddress = async () => {
 const displayTime = () => {
   const time = new Date(unixtime * 1000);
   let hours = time.getHours();
-  if (Number(hours) < 12) {
+  if (hours >= 5 && hours < 12) {
     greeting.innerHTML = "Good morning";
-  } else if (Number(hours) < 18) {
+  } else if (hours < 18) {
     greeting.innerHTML = "Good afternoon";
   } else {
     greeting.innerHTML = "Good evening";
+  }
+  if (hours < 5 || hours > 18) {
+    appBody.classList.replace("daytime", "nighttime");
+    timeIcon.src = "assets/desktop/icon-moon.svg";
   }
   let minutes =
     time.getMinutes().toString().length === 1
@@ -89,9 +83,9 @@ const displayTime = () => {
   unixtime++;
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  getStartingQuote();
-  getIpAddress();
+document.addEventListener("DOMContentLoaded", async () => {
+  await getQuote();
+  await getIpAddress();
   setInterval(displayTime, 1000);
 });
 
