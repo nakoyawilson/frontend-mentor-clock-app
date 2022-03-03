@@ -15,11 +15,12 @@ let unixtime;
 
 const getQuote = async () => {
   try {
-    const response = await axios.get(
+    const response = await fetch(
       "https://programming-quotes-api.herokuapp.com/Quotes/random"
     );
-    quote.innerHTML = response.data.en;
-    author.innerHTML = response.data.author;
+    const data = await response.json();
+    quote.innerHTML = data.en;
+    author.innerHTML = data.author;
   } catch (err) {
     console.log(err);
   }
@@ -27,11 +28,12 @@ const getQuote = async () => {
 
 const getStartingQuote = async () => {
   try {
-    const response = await axios.get(
+    const response = await fetch(
       "https://programming-quotes-api.herokuapp.com/Quotes/5a96001a7700780004d51dce"
     );
-    quote.innerHTML = response.data.en;
-    author.innerHTML = response.data.author;
+    const data = await response.json();
+    quote.innerHTML = data.en;
+    author.innerHTML = data.author;
   } catch (err) {
     console.log(err);
   }
@@ -39,15 +41,16 @@ const getStartingQuote = async () => {
 
 const getCurrentTime = async () => {
   try {
-    const response = await axios.get(
+    const response = await fetch(
       `https://worldtimeapi.org/api/ip/${userIpAddress}`
     );
-    abbreviation.innerHTML = response.data.abbreviation;
-    currentTimezone.innerHTML = response.data.timezone;
-    dayOfTheYear.innerHTML = response.data.day_of_year;
-    dayOfTheWeek.innerHTML = response.data.day_of_week;
-    weekNumber.innerHTML = response.data.week_number;
-    unixtime = response.data.unixtime;
+    const data = await response.json();
+    abbreviation.innerHTML = data.abbreviation;
+    currentTimezone.innerHTML = data.timezone;
+    dayOfTheYear.innerHTML = data.day_of_year;
+    dayOfTheWeek.innerHTML = data.day_of_week;
+    weekNumber.innerHTML = data.week_number;
+    unixtime = data.unixtime;
   } catch (err) {
     console.log(err);
   }
@@ -55,12 +58,13 @@ const getCurrentTime = async () => {
 
 const getIpAddress = async () => {
   try {
-    const response = await axios.get(
+    const response = await fetch(
       "https://api.freegeoip.app/json/?apikey=4b767e00-99b7-11ec-84ba-6f2c148a4c0e"
     );
-    userIpAddress = response.data.ip;
+    const data = await response.json();
+    userIpAddress = data.ip;
     await getCurrentTime(userIpAddress);
-    userLocation.innerHTML = `${response.data.region_name}, ${response.data.country_code}`;
+    userLocation.innerHTML = `${data.region_name}, ${data.country_code}`;
   } catch (err) {
     console.log(err);
   }
