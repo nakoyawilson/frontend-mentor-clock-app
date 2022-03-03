@@ -73,6 +73,9 @@ const displayTime = () => {
   if (hours < 5 || hours > 18) {
     appBody.classList.replace("daytime", "nighttime");
     timeIcon.src = "assets/desktop/icon-moon.svg";
+  } else {
+    appBody.classList = "daytime";
+    timeIcon.src = "assets/desktop/icon-sun.svg";
   }
   let minutes =
     time.getMinutes().toString().length === 1
