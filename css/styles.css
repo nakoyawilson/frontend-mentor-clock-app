@@ -4,6 +4,7 @@
   --font: "Inter", sans-serif;
   --black1: rgb(0, 0, 0);
   --black2: rgb(48, 48, 48);
+  --grey: rgb(153, 153, 153);
   --transparent-black: rgba(0, 0, 0, 0.4);
   --white: rgb(255, 255, 255);
 }
@@ -98,6 +99,10 @@ img {
 
 .refresh {
   width: min(100%, 1.667rem);
+}
+
+.refresh-icon {
+  opacity: 0.5;
 }
 
 .time-icon {
@@ -309,5 +314,31 @@ img {
 
   .expand-content {
     margin: 0;
+  }
+
+  .expand-content:hover {
+    cursor: pointer;
+  }
+
+  .expand-content:hover .expand-icon-wrapper {
+    background-color: var(--grey);
+    transition: 0.5s;
+  }
+
+  .expand-icon-wrapper {
+    transition: 0.5s;
+  }
+
+  .refresh:hover {
+    cursor: pointer;
+  }
+
+  .refresh:hover .refresh-icon {
+    opacity: 1;
+    transition: 0.5s;
+  }
+
+  .refresh-icon {
+    transition: 0.5s;
   }
 }
