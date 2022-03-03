@@ -120,13 +120,17 @@ img {
 }
 
 .time {
+  display: inline-block;
   font-weight: 700;
   font-size: 10rem;
   line-height: 10rem;
   letter-spacing: -2.5px;
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
 }
 
 .abbreviation {
+  display: inline-block;
   font-weight: 300;
   font-size: 1.5rem;
   line-height: 2.8rem;
@@ -134,7 +138,7 @@ img {
 }
 
 .location {
-  display: inline-block;
+  display: block;
   font-weight: 700;
   font-size: 1.5rem;
   line-height: 2.8rem;
@@ -181,13 +185,129 @@ img {
 
 /* Media Queries */
 @media screen and (min-width: 768px) {
+  /* General Styles */
   body {
     background-image: var(--bg-tablet);
+  }
+
+  /* Main */
+
+  .main {
+    padding-top: 8rem;
+    width: min(83.3333%, 64rem);
+  }
+
+  .quote-content {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+  }
+
+  .quote-wrapper {
+    width: min(100%, 57.3rem);
+    gap: 1.6rem;
+  }
+
+  .quote-author {
+    margin-top: 1.3rem;
+  }
+
+  .refresh {
+    margin-top: 0.9rem;
+  }
+
+  .greeting,
+  .location {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    letter-spacing: 3.6px;
+  }
+
+  .extra-text {
+    display: inline;
+  }
+
+  .time {
+    font-size: 17.5rem;
+    line-height: 17.5rem;
+    letter-spacing: -4.375px;
+    margin: 0;
+  }
+
+  .abbreviation {
+    margin-left: 1.1rem;
+    font-size: 3.2rem;
+    line-height: 3.2rem;
+  }
+
+  .expand-content {
+    margin-top: 8rem;
+    margin-bottom: 6.4rem;
+    width: 14.6rem;
+    height: 5.6rem;
+    padding: 0.8rem 0.9rem 0.8rem 2.1rem;
+  }
+
+  .expand-text {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    letter-spacing: 5px;
+  }
+
+  .expand-icon-wrapper {
+    width: 4rem;
+    height: 4rem;
   }
 }
 
 @media screen and (min-width: 1440px) {
+  /* General Styles */
   body {
     background-image: var(--bg-desktop);
+  }
+
+  /* Main */
+
+  .main {
+    padding-top: 5.6rem;
+    width: min(77.08333%, 111rem);
+  }
+
+  .refresh {
+    margin-top: 1rem;
+  }
+
+  .time-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 9.8rem;
+  }
+
+  .greeting {
+    font-size: 2rem;
+    letter-spacing: 4px;
+  }
+
+  .time {
+    font-size: 20rem;
+    line-height: 20rem;
+    letter-spacing: -5px;
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .abbreviation {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  .location {
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    letter-spacing: 4.8px;
+  }
+
+  .expand-content {
+    margin: 0;
   }
 }
