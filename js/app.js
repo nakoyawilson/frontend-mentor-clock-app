@@ -99,15 +99,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 newQuoteButton.addEventListener("click", getQuote);
 
 expandButton.addEventListener("click", () => {
-  if (moreInfo.classList.contains("hidden")) {
-    moreInfo.classList.toggle("hidden");
+  if (moreInfo.classList.contains("show-less-info")) {
+    moreInfo.classList.toggle("show-less-info");
     quoteContainer.classList.toggle("hidden");
     mainContainer.classList.toggle("less-info");
     timeContainer.classList.toggle("less-time-info");
     expandIcon.src = "assets/desktop/icon-arrow-up.svg";
     expandText.innerHTML = "Less";
   } else {
-    moreInfo.classList.toggle("hidden");
+    moreInfo.classList.toggle("show-less-info");
     quoteContainer.classList.toggle("hidden");
     mainContainer.classList.toggle("less-info");
     timeContainer.classList.toggle("less-time-info");
