@@ -465,4 +465,8 @@ img {
   .quote-wrapper {
     margin-bottom: 23.3rem;
   }
+
+  .time-wrapper {
+    margin-bottom: 0;
+  }
 }
