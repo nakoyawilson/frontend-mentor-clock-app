@@ -250,9 +250,29 @@ img {
   font-weight: 700;
   font-size: 2rem;
   line-height: 2.4rem;
+  text-align: right;
 }
 
 /* Media Queries */
+@media screen and (max-width: 270px) {
+  /* Main */
+
+  .time {
+    font-size: 7rem;
+    line-height: 7rem;
+    letter-spacing: -2.5px;
+  }
+
+  .info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info-results {
+    text-align: left;
+  }
+}
+
 @media screen and (min-width: 768px) {
   /* General Styles */
   body {
@@ -470,6 +490,7 @@ img {
 
   .info-results {
     font-size: 5.6rem;
-    line-height: 6.8rem;
+
+    line-height: 5.6rem;
   }
 }
