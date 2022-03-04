@@ -211,7 +211,7 @@ img {
 
 .info-wrapper {
   height: calc(100vh - 41.1rem);
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--info-bg);
   -webkit-backdrop-filter: blur(40.7742px);
   backdrop-filter: blur(40.7742px);
   padding-top: 4.8rem;
