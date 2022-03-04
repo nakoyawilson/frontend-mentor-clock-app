@@ -11,17 +11,17 @@
 }
 
 .daytime {
-  --bg-mobile: url(../assets/mobile/bg-image-daytime.jpg);
-  --bg-tablet: url(../assets/tablet/bg-image-daytime.jpg);
-  --bg-desktop: url(../assets/desktop/bg-image-daytime.jpg);
+  --bg-mobile: url("../assets/mobile/bg-image-daytime.jpg");
+  --bg-tablet: url("../assets/tablet/bg-image-daytime.jpg");
+  --bg-desktop: url("../assets/desktop/bg-image-daytime.jpg");
   --info-text: var(--black2);
   --info-bg: rgba(255, 255, 255, 0.75);
 }
 
 .nighttime {
-  --bg-mobile: url(../assets/mobile/bg-image-nighttime.jpg);
-  --bg-tablet: url(../assets/tablet/bg-image-nighttime.jpg);
-  --bg-desktop: url(../assets/desktop/bg-image-nighttime.jpg);
+  --bg-mobile: url("../assets/mobile/bg-image-nighttime.jpg");
+  --bg-tablet: url("../assets/tablet/bg-image-nighttime.jpg");
+  --bg-desktop: url("../assets/desktop/bg-image-nighttime.jpg");
   --info-text: var(--white);
   --info-bg: rgba(0, 0, 0, 0.75);
 }
