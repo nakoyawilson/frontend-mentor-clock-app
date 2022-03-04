@@ -94,9 +94,9 @@ const displayTime = () => {
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
-  // await getQuote();
-  // await getIpAddress();
-  // setInterval(displayTime, 1000);
+  await getQuote();
+  await getIpAddress();
+  setInterval(displayTime, 1000);
 });
 
 newQuoteButton.addEventListener("click", getQuote);
