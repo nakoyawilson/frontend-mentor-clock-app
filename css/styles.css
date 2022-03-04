@@ -87,8 +87,8 @@ img {
 .main {
   display: flex;
   flex-direction: column;
-  /* min-height: 100vh; */
-  /* justify-content: space-between; */
+  min-height: 100vh;
+  justify-content: space-between;
   position: relative;
   z-index: 100;
 }
@@ -472,12 +472,4 @@ img {
     font-size: 5.6rem;
     line-height: 6.8rem;
   }
-
-  .quote-wrapper {
-    margin-bottom: 23.3rem;
-  }
-
-  /* .time-wrapper {
-    margin-bottom: 0;
-  } */
 }
