@@ -10,8 +10,6 @@ This is a solution to the [Clock app challenge on Frontend Mentor](https://www.f
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
@@ -50,6 +48,9 @@ Users should be able to:
 - [Programming Quotes API](https://programming-quotes-api.herokuapp.com/)
 
 ### Useful resources
+
+- [Convert a Unix timestamp to time in JavaScript - Stack Overflow](https://stackoverflow.com/questions/847185/convert-a-unix-timestamp-to-time-in-javascript)
+- [JavaScript Clock - W3Schools](https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock)
 
 ## Author
 
