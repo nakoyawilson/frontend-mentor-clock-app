@@ -72,7 +72,7 @@ const displayTime = () => {
   let hours = time.getHours();
   if (hours >= 5 && hours < 12) {
     greeting.innerHTML = "Good morning";
-  } else if (hours < 18) {
+  } else if (hours >= 12 && hours < 18) {
     greeting.innerHTML = "Good afternoon";
   } else {
     greeting.innerHTML = "Good evening";
