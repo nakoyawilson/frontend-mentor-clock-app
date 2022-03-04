@@ -87,7 +87,7 @@ img {
 .main {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   /* justify-content: space-between; */
   position: relative;
   z-index: 100;
@@ -477,7 +477,7 @@ img {
     margin-bottom: 23.3rem;
   }
 
-  .time-wrapper {
+  /* .time-wrapper {
     margin-bottom: 0;
-  }
+  } */
 }
