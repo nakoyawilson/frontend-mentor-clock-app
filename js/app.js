@@ -43,7 +43,7 @@ const getCurrentTime = async () => {
     );
     const data = await response.json();
     abbreviation.innerHTML = data.abbreviation;
-    currentTimezone.innerHTML = data.timezone;
+    currentTimezone.innerHTML = data.timezone.replace(/_/g, " ");
     dayOfTheYear.innerHTML = data.day_of_year;
     dayOfTheWeek.innerHTML = data.day_of_week;
     weekNumber.innerHTML = data.week_number;
@@ -94,9 +94,9 @@ const displayTime = () => {
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
-  await getQuote();
-  await getIpAddress();
-  setInterval(displayTime, 1000);
+  // await getQuote();
+  // await getIpAddress();
+  // setInterval(displayTime, 1000);
 });
 
 newQuoteButton.addEventListener("click", getQuote);
