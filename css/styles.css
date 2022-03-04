@@ -222,7 +222,7 @@ img {
 }
 
 .info-wrapper {
-  height: calc(100vh - 41.1rem);
+  height: calc(100% - 41.1rem);
   background-color: var(--info-bg);
   -webkit-backdrop-filter: blur(40.7742px);
   backdrop-filter: blur(40.7742px);
@@ -350,7 +350,7 @@ img {
   }
 
   .info-wrapper {
-    height: calc(100vh - 58.4rem);
+    height: calc(100% - 58.4rem);
     padding-top: 11.9rem;
   }
 
@@ -464,7 +464,7 @@ img {
   }
 
   .info-wrapper {
-    height: calc(100vh - 40rem);
+    height: calc(100% - 40rem);
     padding-top: 7.4rem;
   }
 
