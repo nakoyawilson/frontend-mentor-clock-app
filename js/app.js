@@ -25,12 +25,11 @@ let unixtime;
 
 const getQuote = async () => {
   try {
-    const response = await fetch(
+    const response = await axios.get(
       "https://programming-quotes-api.herokuapp.com/Quotes/random"
     );
-    const data = await response.json();
-    quote.innerHTML = data.en;
-    author.innerHTML = data.author;
+    quote.innerHTML = response.data.en;
+    author.innerHTML = response.data.author;
   } catch (err) {
     console.log(err);
   }
@@ -38,16 +37,15 @@ const getQuote = async () => {
 
 const getCurrentTime = async () => {
   try {
-    const response = await fetch(
+    const response = await axios.get(
       `https://worldtimeapi.org/api/ip/${userIpAddress}`
     );
-    const data = await response.json();
-    abbreviation.innerHTML = data.abbreviation;
-    currentTimezone.innerHTML = data.timezone.replace(/_/g, " ");
-    dayOfTheYear.innerHTML = data.day_of_year;
-    dayOfTheWeek.innerHTML = data.day_of_week;
-    weekNumber.innerHTML = data.week_number;
-    unixtime = data.unixtime;
+    abbreviation.innerHTML = response.data.abbreviation;
+    currentTimezone.innerHTML = response.data.timezone.replace(/_/g, " ");
+    dayOfTheYear.innerHTML = response.data.day_of_year;
+    dayOfTheWeek.innerHTML = response.data.day_of_week;
+    weekNumber.innerHTML = response.data.week_number;
+    unixtime = response.data.unixtime;
   } catch (err) {
     console.log(err);
   }
@@ -55,13 +53,12 @@ const getCurrentTime = async () => {
 
 const getIpAddress = async () => {
   try {
-    const response = await fetch(
+    const response = await axios.get(
       "https://api.freegeoip.app/json/?apikey=4b767e00-99b7-11ec-84ba-6f2c148a4c0e"
     );
-    const data = await response.json();
-    userIpAddress = data.ip;
+    userIpAddress = response.data.ip;
     await getCurrentTime(userIpAddress);
-    userLocation.innerHTML = `${data.region_name}, ${data.country_code}`;
+    userLocation.innerHTML = `${response.data.region_name}, ${response.data.country_code}`;
   } catch (err) {
     console.log(err);
   }
