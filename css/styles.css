@@ -254,7 +254,7 @@ img {
 }
 
 /* Media Queries */
-@media screen and (max-width: 270px) {
+@media screen and (max-width: 300px) {
   /* Main */
 
   .time {
@@ -273,7 +273,7 @@ img {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 660px) {
   /* General Styles */
   body {
     background-image: var(--bg-tablet);
@@ -377,7 +377,7 @@ img {
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1080px) {
   /* General Styles */
   body {
     background-image: var(--bg-desktop);
