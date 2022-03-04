@@ -1,4 +1,7 @@
 const appBody = document.querySelector("body");
+const mainContainer = document.getElementById("mainContainer");
+const quoteContainer = document.getElementById("quoteContainer");
+const timeContainer = document.getElementById("timeContainer");
 const quote = document.getElementById("quote");
 const author = document.getElementById("author");
 const newQuoteButton = document.getElementById("newQuoteButton");
@@ -11,6 +14,10 @@ const currentTimezone = document.getElementById("currentTimezone");
 const dayOfTheYear = document.getElementById("dayOfTheYear");
 const dayOfTheWeek = document.getElementById("dayOfTheWeek");
 const weekNumber = document.getElementById("weekNumber");
+const expandButton = document.getElementById("expand");
+const expandText = document.getElementById("expandText");
+const expandIcon = document.getElementById("expandIcon");
+const moreInfo = document.getElementById("moreInfo");
 const apikey = "";
 let userIpAddress;
 let startingHour;
@@ -87,9 +94,27 @@ const displayTime = () => {
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
-  await getQuote();
-  await getIpAddress();
-  setInterval(displayTime, 1000);
+  // await getQuote();
+  // await getIpAddress();
+  // setInterval(displayTime, 1000);
 });
 
 newQuoteButton.addEventListener("click", getQuote);
+
+expandButton.addEventListener("click", () => {
+  if (moreInfo.classList.contains("hidden")) {
+    moreInfo.classList.toggle("hidden");
+    quoteContainer.classList.toggle("hidden");
+    mainContainer.classList.toggle("less-info");
+    timeContainer.classList.toggle("less-time-info");
+    expandIcon.src = "assets/desktop/icon-arrow-up.svg";
+    expandText.innerHTML = "Less";
+  } else {
+    moreInfo.classList.toggle("hidden");
+    quoteContainer.classList.toggle("hidden");
+    mainContainer.classList.toggle("less-info");
+    timeContainer.classList.toggle("less-time-info");
+    expandIcon.src = "assets/desktop/icon-arrow-down.svg";
+    expandText.innerHTML = "More";
+  }
+});

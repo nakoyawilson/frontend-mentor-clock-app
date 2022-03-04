@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body class="daytime">
-    <main class="main">
-      <div class="quote-wrapper">
+    <main id="mainContainer" class="main">
+      <div id="quoteContainer" class="quote-wrapper container">
         <div>
           <p id="quote" class="quote-content quote-text">
             The science of operations, as derived from mathematics more
@@ -39,7 +39,7 @@
           </svg>
         </button>
       </div>
-      <div class="time-wrapper">
+      <div id="timeContainer" class="time-wrapper container">
         <h1>
           <span class="greeting"
             ><img
@@ -56,20 +56,38 @@
             >in <span id="userLocation">London, UK</span></span
           >
         </h1>
-        <button class="expand-content">
-          <span id="expand" class="expand-text">More</span>
+        <button id="expand" class="expand-content">
+          <span id="expandText" class="expand-text">More</span>
           <span class="expand-icon-wrapper"
-            ><img src="assets/desktop/icon-arrow-down.svg" alt
+            ><img
+              src="assets/desktop/icon-arrow-down.svg"
+              alt=""
+              id="expandIcon"
+              class="expand-icon"
           /></span>
         </button>
       </div>
+      <div id="moreInfo" class="info-wrapper hidden">
+        <div class="container">
+          <p class="info">
+            <span>Current timezone</span>
+            <span id="currentTimezone" class="info-results">Europe/London</span>
+          </p>
+          <p class="info">
+            <span>Day of the year</span>
+            <span id="dayOfTheYear" class="info-results">295</span>
+          </p>
+          <p class="info">
+            <span>Day of the week</span
+            ><span id="dayOfTheWeek" class="info-results">5</span>
+          </p>
+          <p class="info">
+            <span>Week number</span
+            ><span id="weekNumber" class="info-results">42</span>
+          </p>
+        </div>
+      </div>
     </main>
-    <div class="more">
-      <p>Current timezone <span id="currentTimezone">Europe/London</span></p>
-      <p>Day of the year <span id="dayOfTheYear">295</span></p>
-      <p>Day of the week <span id="dayOfTheWeek">5</span></p>
-      <p>Week number <span id="weekNumber">42</span></p>
-    </div>
     <script src="js/app.js"></script>
   </body>
 </html>
