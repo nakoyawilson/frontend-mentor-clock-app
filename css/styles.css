@@ -77,7 +77,7 @@ img {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   position: relative;
   z-index: 100;
 }
@@ -460,5 +460,9 @@ img {
   .info-results {
     font-size: 5.6rem;
     line-height: 6.8rem;
+  }
+
+  .quote-wrapper {
+    margin-bottom: 23.3rem;
   }
 }
