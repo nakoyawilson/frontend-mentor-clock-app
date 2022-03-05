@@ -66,28 +66,33 @@ const getIpAddress = async () => {
 
 const displayTime = () => {
   const time = new Date(unixtime * 1000);
-  let hours = time.getHours();
-  if (hours >= 5 && hours < 12) {
-    greeting.innerHTML = "Good morning";
-  } else if (hours >= 12 && hours < 18) {
-    greeting.innerHTML = "Good afternoon";
-  } else {
-    greeting.innerHTML = "Good evening";
-  }
-  if (hours < 5 || hours > 18) {
-    appBody.classList.replace("daytime", "nighttime");
-    timeIcon.src = "assets/desktop/icon-moon.svg";
-  } else {
-    appBody.classList = "daytime";
-    timeIcon.src = "assets/desktop/icon-sun.svg";
-  }
-  let minutes =
-    time.getMinutes().toString().length === 1
-      ? `0${time.getMinutes()}`
-      : time.getMinutes();
+  if (!isNaN(time)) {
+    let hours =
+      time.getHours().toString().length === 1
+        ? `0${time.getHours()}`
+        : time.getHours();
+    if (hours >= 5 && hours < 12) {
+      greeting.innerHTML = "Good morning";
+    } else if (hours >= 12 && hours < 18) {
+      greeting.innerHTML = "Good afternoon";
+    } else {
+      greeting.innerHTML = "Good evening";
+    }
+    if (hours < 5 || hours > 18) {
+      appBody.classList.replace("daytime", "nighttime");
+      timeIcon.src = "assets/desktop/icon-moon.svg";
+    } else {
+      appBody.classList = "daytime";
+      timeIcon.src = "assets/desktop/icon-sun.svg";
+    }
+    let minutes =
+      time.getMinutes().toString().length === 1
+        ? `0${time.getMinutes()}`
+        : time.getMinutes();
 
-  userTime.innerHTML = `${hours}:${minutes}`;
-  unixtime++;
+    userTime.innerHTML = `${hours}:${minutes}`;
+    unixtime++;
+  }
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
